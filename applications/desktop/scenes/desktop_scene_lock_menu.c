@@ -73,6 +73,12 @@ bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
                 desktop->scene_manager, DesktopSceneMain);
             consumed = true;
             break;
+        case DesktopLockMenuEventDumb:
+            FURI_LOG_I(TAG, "Dumb menu event received");
+            scene_manager_set_scene_state(desktop->scene_manager, DesktopSceneLockMenu, 0);
+            desktop_lock(desktop);
+            consumed = true;
+            break;
         default:
             break;
         }
@@ -83,3 +89,4 @@ bool desktop_scene_lock_menu_on_event(void* context, SceneManagerEvent event) {
 void desktop_scene_lock_menu_on_exit(void* context) {
     UNUSED(context);
 }
+// DesktopLockMenuEventDumb,DesktopLockMenuEventPinLock:

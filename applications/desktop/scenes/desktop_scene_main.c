@@ -138,6 +138,12 @@ bool desktop_scene_main_on_event(void* context, SceneManagerEvent event) {
             consumed = true;
             break;
 
+        // added for DUMB menu rca 01-jun-2022 
+	case DesktopDumbEventUpdate:
+            desktop_view_dumb_update(desktop->dumb_view);
+            consumed = true;
+            break;
+
         default:
             break;
         }

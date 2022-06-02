@@ -43,6 +43,9 @@ static void lock_menu_callback(void* context, uint8_t index) {
     case 1: // lock
         lock_menu->callback(DesktopLockMenuEventPinLock, lock_menu->context);
         break;
+    case 2: // DUMB menu
+        lock_menu->callback(DesktopLockMenuEventDumb, lock_menu->context);
+        break;
     default: // wip message
         with_view_model(
             lock_menu->view, (DesktopLockMenuViewModel * model) {

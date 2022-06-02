@@ -5,6 +5,7 @@
 #include "views/desktop_view_pin_timeout.h"
 #include "views/desktop_view_pin_input.h"
 #include "views/desktop_view_locked.h"
+#include "views/desktop_view_dumb.h"
 #include "views/desktop_view_main.h"
 #include "views/desktop_view_first_start.h"
 #include "views/desktop_view_lock_menu.h"
@@ -48,6 +49,8 @@ struct Desktop {
     DesktopLockMenuView* lock_menu;
     DesktopDebugView* debug_view;
     DesktopViewLocked* locked_view;
+    // here we connect the dumb view to the desktop rca 01-jun-2022 
+    DesktopViewDumb* dumb_view;
     DesktopMainView* main_view;
     DesktopViewPinTimeout* pin_timeout_view;
 
